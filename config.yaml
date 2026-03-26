@@ -1,0 +1,296 @@
+
+# Model Configuration
+model:
+  model_id_student: "Qwen/Qwen3-VL-4B-Instruct"
+  local_model_dir_student: "/data/models/Qwen3-VL-4B-Instruct"
+
+  # model_id_student: "Qwen/Qwen3-VL-8B-Instruct"
+  # local_model_dir_student: "/data/models/Qwen3-VL-8B-Instruct"
+
+
+  # model_id_student: "OpenGVLab/InternVL3_5-4B"
+  # local_model_dir_student: "/data/models/internVL3.5-4B"
+
+
+  model_id_teacher: "gpt-4o"
+  # local_model_dir_teacher: "/data/models/Qwen2.5-VL-32B-Instruct"
+  # model_id_student: "Qwen/Qwen3-VL-8B-Instruct"
+  # model_id_teacher: "Qwen/Qwen3-VL-30B-A3B-Thinking"
+  # model_id_teacher: "Qwen/Qwen3-VL-30B-A3B-Thinking"
+  # local_model_dir_teacher: "/data/models/Qwen3-VL-30B-A3B-Thinking"
+
+  # model_id_teacher: "Qwen/Qwen3-VL-30B-A3B-Instruct"
+  # local_model_dir_teacher: "/data/models/Qwen3-VL-30B-A3B-Instruct"
+  quant_conf: "4bit"
+
+  use_flash: False
+  # model_id_teacher: "gemini-2.5-flash"
+
+
+  test_model_id_student: "Qwen/Qwen2.5-VL-7B-Instruct"
+  test_local_model_dir_student: "/data/models/Qwen2.5-VL-7B-Instruct"
+
+
+
+# Dataset Configuration
+dataset:
+  # data_id: "deepcs233/Visual-CoT"
+  # local_data_dir: "/data/datasets/Visual-CoT"
+
+  # data_id: "craigwu/vstar_bench"
+  # local_data_dir: "/data/datasets/vstar_bench"
+
+  # data_id: "Lin-Chen/MMStar"
+  # local_data_dir: "/data/datasets/mmstar"
+
+  # data_id: "MMMU/MMMU_Pro"
+  # local_data_dir: "/data/datasets/mmmu_pro"
+  # # options: ["vision"]
+  # # options: ["standard (10 options)"]
+  # options: ["standard (4 options)"]
+
+  # options: ["standard (10 options)", "standard (4 options)"] #["standard (10 options)", "standard (4 options)", "vision"]
+
+
+  data_id: "MathLLMs/MathVision"
+  local_data_dir: "/data/datasets/mathvision"
+
+  # data_id: "AI4Math/MathVerse"
+  # local_data_dir: "/data/datasets/mathverse"
+  vison_only: False
+
+  # data_id: "MMMU/MMMU"
+  # local_data_dir: "/data/datasets/mmmu"
+
+
+training_data:
+
+  data_id: ["MMMU/MMMU", "AI4Math/MathVerse"]
+  local_data_dir: ["/data/datasets/mmmu", "/data/datasets/mathverse"]
+  vison_only: False
+
+# Paths Configuration
+paths:
+
+  logs_dir_evo: "logs/log"
+  logs_dir_gen: "logs/log_gen"
+  env_file: "utils/open_key.env"
+
+  selected_idx_file: "data/selected_idx.json"
+  looking_idx_file: "data/looking_idx.json"
+  intuition_set_file: "data/intuition_set.json"
+  testing_ids_file: "data/testing_ids.json"
+
+  output_dir: "/evo_pairs/"
+
+  data_dir: "/data/datasets"
+
+  test_ids_file: "data/test_ids.pkl"
+
+  search_space_dir: "/searchspace"
+  stage_outputs_dir: "/stage_output"
+
+  token_cost_samples_dir: "token_cost_samples"
+
+  
+
+# Inference Configuration
+inference:
+  iterations: 30
+  len_data: 5
+  topk: 3
+
+
+  attn: True
+
+  prompt_refine: False
+  CoT: False
+  mini: False
+  stages: []
+  
+  # stages_pool: ["BBOX", "SCENE.SUMMARY", "QUESTION.PARSING", "TEXT.DETECTION", "COUNT", "COLOR.ATTRIBUTE", "SPATIAL.RELATION"]
+  stages_pool: ["TASK.INTERPRETATION", 
+              "VISUAL.OBSERVATION", 
+              "TEXTUAL.UNDERSTANDING", 
+              "CONTEXTUAL.LINKING", 
+              "FACT.EXTRACTION", 
+              "VARIABLE.DEFINITION", 
+              "RELATIONAL.REASONING", 
+              "QUANTITATIVE.REASONING", 
+              "LOGICAL.FILTERING",
+              "HYPOTHESIS.GENERATION",
+              "CROSSMODAL.ALIGNMENT",
+              "SELFCONSISTENCY.CHECK",
+              "COMPARATIVE.EVALUATION",
+              "EXPLANATION.GENERATION"]
+
+  
+
+  TASK.INTERPRETATION:
+    temperature: 0
+    do_sample: False
+    num_beams: 1
+    max_new_tokens: 128
+
+  VISUAL.OBSERVATION:
+    temperature: 0
+    do_sample: False
+    num_beams: 1
+    max_new_tokens: 128
+
+  TEXTUAL.UNDERSTANDING:
+    temperature: 0
+    do_sample: False
+    num_beams: 1
+    max_new_tokens: 128
+
+  CONTEXTUAL.LINKING:
+    temperature: 0
+    do_sample: False
+    num_beams: 1
+    max_new_tokens: 128
+
+  FACT.EXTRACTION:
+    temperature: 0
+    do_sample: False
+    num_beams: 1
+    max_new_tokens: 128
+
+  VARIABLE.DEFINITION:
+    temperature: 0
+    do_sample: False
+    num_beams: 1
+    max_new_tokens: 128
+
+  RELATIONAL.REASONING:
+    temperature: 0
+    do_sample: False
+    num_beams: 1
+    max_new_tokens: 128
+
+  QUANTITATIVE.REASONING:
+    temperature: 0
+    do_sample: False
+    num_beams: 1
+    max_new_tokens: 128
+
+  LOGICAL.FILTERING:
+    temperature: 0
+    do_sample: False
+    num_beams: 1
+    max_new_tokens: 128
+
+  HYPOTHESIS.GENERATION:
+    temperature: 0
+    do_sample: False
+    num_beams: 1
+    max_new_tokens: 128
+
+  CROSSMODAL.ALIGNMENT:
+    temperature: 0
+    do_sample: False
+    num_beams: 1
+    max_new_tokens: 128
+
+  SELFCONSISTENCY.CHECK:  
+    temperature: 0
+    do_sample: False
+    num_beams: 1
+    max_new_tokens: 128
+
+  COMPARATIVE.EVALUATION:
+    temperature: 0
+    do_sample: False
+    num_beams: 1
+    max_new_tokens: 128
+
+  ANSWER.CONSOLIDATION:
+    temperature: 0
+    do_sample: False
+    num_beams: 1
+    max_new_tokens: 128
+
+  EXPLANATION.GENERATION:
+    temperature: 0
+    do_sample: False
+    num_beams: 1
+    max_new_tokens: 128
+
+  DIRECT_ANSWER:
+    temperature: 0
+    do_sample: False
+    num_beams: 1    
+    max_new_tokens: 128
+
+  TEACHER:
+    temperature: 0.6
+    max_new_tokens: 2048
+    # do_sample: False
+    # num_beams: 1
+    # model_nm: "gpt-4o-mini"
+    # client: "openai"
+
+  
+
+# Logging Configuration
+logging:
+  # Log level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+  level: "INFO"
+  # Whether to log to console
+  console: true
+  # Log format
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+# Generation Configuration
+generation:
+  # Random seed for reproducible generation (set to null for random behavior)
+  # Whether to use deterministic CUDA operations (may impact performance)
+  deterministic: true
+
+# Evaluation Configuration
+evaluation:
+  # Reference key for answers in dataset
+  ref_key: "possible_answers"
+  # Whether to generate attention heatmaps
+  generate_heatmap: false
+  # Batch size for evaluation
+  batch_size: 1
+
+
+# Debug Configuration
+debug:
+  # Whether to enable debug mode
+  enabled: false
+  # Whether to save intermediate outputs
+  save_intermediate: false
+  # Debug output directory
+  output_dir: "debug_outputs"
+
+gen_training:
+  full_data: False
+  test_length: 100
+  batch_size: 64
+  shuffle: True
+  num_workers: 4
+  epochs: 300
+
+  lr: 1e-4
+  weight_decay: 0.001
+
+
+  attn: True
+  i_q: False
+  
+  setup: 1
+
+  test_iterations: 5
+
+  test_data: True
+  # Options: MathVision, MMStar
+  test_model: "composite"
+  # test_model: "MMStar"
+  # test_model: "MathVision"
+  branch: 5
+
+
+  token_cost: False
