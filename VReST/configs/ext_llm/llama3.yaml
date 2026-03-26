@@ -1,0 +1,8 @@
+name: Meta-Llama-3-8B-Instruct
+path: /data1/zhangcongzhi/llama2-server/models/llama3/Meta-Llama-3-8B-Instruct
+temperature: 0.0
+max_input_len: 16384
+max_output_len: 1024
+call_method: api
+base_url: http://localhost:8001/v1
+api_key: EMPTY

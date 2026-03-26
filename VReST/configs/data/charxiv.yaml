@@ -1,0 +1,7 @@
+name: charxiv
+path: data/CharXiv
+data_dir: data/CharXiv/data
+image_dir: data/CharXiv/images
+mode: reasoning
+split: val
+score_label: llm_score

@@ -1,0 +1,6 @@
+name: mathvision_100
+path : data/MATH-V
+data_dir: data/MATH-V/data
+image_dir: data/MATH-V
+input_file: MathVision_100.jsonl
+score_label: llm_score # rule_score

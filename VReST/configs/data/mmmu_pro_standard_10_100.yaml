@@ -1,0 +1,7 @@
+name: mmmu_pro_standard_10_100
+# your screenshot shows everything under data/MMMU_Pro/export
+path: data/MMMU_Pro/export
+data_dir: data/MMMU_Pro/export
+image_dir: data/MMMU_Pro/export
+input_file: mmmu_pro_standard_10_100.jsonl
+score_label: llm_score

@@ -1,0 +1,7 @@
+defaults:
+  - agents:
+    - qwen2vl_7b
+    - qwen25_7b
+    - qwen25_14b
+
+name: multi_agents

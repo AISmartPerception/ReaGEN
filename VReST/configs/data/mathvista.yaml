@@ -1,0 +1,5 @@
+name: mathvista
+path : data/MathVista
+data_dir: data/MathVista/data
+input_file: testmini.json
+score_label: llm_score

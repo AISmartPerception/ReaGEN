@@ -1,0 +1,5 @@
+name: our6v0
+simple_cot: true # 是否开启树搜索
+
+attempt_num: 3
+n_vote: 1

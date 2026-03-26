@@ -1,0 +1,4 @@
+name: our3_refine_validate_text_only  # 没有使用json模式，使用规则方法提取   多跳问答的范式
+validate: True
+refine_question: True
+decompose_text_only: True

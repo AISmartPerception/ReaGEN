@@ -1,0 +1,33 @@
+defaults:
+  - data: mathvision
+  - llm: qwen3vl
+  - prompt_method: mctsv8
+  - ext_llm: qwen25
+  - _self_
+
+
+# generate  or  extract  or  scoring
+mode: generate
+worker_num: 30  # 并发调用的worker数量
+
+save_steps: 1
+
+extract_method: ans_and_score  # yes_or_no  or  ans_and_score
+
+extract_field: max_vote_terminal  # max_mean_terminal  or  max_terminal  or max_vote_terminal
+
+# hydra的配置
+hydra:
+  run:
+    # dir: "./outputs/data=${data.name}/llm=${llm.name}/${now:%Y-%m-%d}_${now:%H-%M-%S}"
+    dir: "./outputs/data=${data.name}/llm=${llm.name}/prompt_method=${prompt_method.name}"
+  job:
+    env_set:
+      TOKENIZERS_PARALLELISM: "true"
+    # config:
+    #   override_dirname:
+    #     exclude_keys:
+    #       - supervised_rate
+  sweep:
+    dir: ${hydra.run.dir}
+    subdir: ${hydra.job.override_dirname}

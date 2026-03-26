@@ -1,0 +1,8 @@
+name: mctsv1 
+
+attempt_num: 3
+decompose_question_num: 8
+tree_width: 10
+
+
+mcts_rollouts: 10

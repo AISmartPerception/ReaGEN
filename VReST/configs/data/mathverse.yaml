@@ -1,0 +1,5 @@
+name: mathverse
+path : data/MathVerse
+data_dir: data/MathVerse
+input_file: testmini_vision_only.jsonl
+score_label: llm_score # rule_score

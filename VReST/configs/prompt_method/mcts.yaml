@@ -1,0 +1,8 @@
+name: mcts 
+
+attempt_num: 3
+decompose_question_num: 8
+tree_width: 5
+
+
+mcts_rollouts: 10

@@ -1,0 +1,8 @@
+name: our6
+simple_cot: false # 是否使用树搜索
+
+attempt_num: 3
+decompose_question_num: 8
+tree_width: 5
+
+reward_method: subquestion # subquestion_answer or subquestion or answer

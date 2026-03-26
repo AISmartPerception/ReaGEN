@@ -1,0 +1,6 @@
+name: mmmu_pro_standard_4
+path: data/MMMU_Pro/export
+data_dir: data/MMMU_Pro/export
+image_dir: data/MMMU_Pro/export
+input_file: mmmu_pro_standard_4.jsonl
+score_label: llm_score

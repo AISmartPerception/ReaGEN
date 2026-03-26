@@ -1,0 +1,6 @@
+name: vstar_100
+path: data/VStar
+data_dir: data/VStar/data
+image_dir: data/VStar/images
+input_file: VStar_100.jsonl
+score_label: llm_score

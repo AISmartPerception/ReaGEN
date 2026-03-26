@@ -1,0 +1,8 @@
+# configs/data/mmstar.yaml
+name: mmstar
+# this is exactly where your screenshot shows the data
+path: data/MMStar
+data_dir: data/MMStar
+input_file: mmstar.jsonl
+# we want to use the LLM-judged score, same as VStar
+score_label: llm_score

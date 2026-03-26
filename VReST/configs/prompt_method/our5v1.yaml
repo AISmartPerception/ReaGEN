@@ -1,0 +1,6 @@
+name: our5v1    # Multi Agent system
+planner: qwen25_7b
+reasoner: qwen2vl_7b
+verifier: qwen2vl_7b
+judger: qwen25_7b
+summarizer: qwen25_7b

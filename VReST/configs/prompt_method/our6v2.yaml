@@ -1,0 +1,8 @@
+name: our6v2 #同时考虑问题的分数和答案的分数.
+simple_cot: false # 是否使用树搜索
+
+attempt_num: 3
+decompose_question_num: 8
+tree_width: 10
+
+reward_method: subquestion_answer # subquestion_answer or subquestion or answer

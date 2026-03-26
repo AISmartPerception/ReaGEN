@@ -1,0 +1,12 @@
+name: Qwen3_VL_4B_Instruct
+text_only: false
+path : /data00/mohan/ckpt/Qwen3_VL_4B_Instruct
+max_input_len: 16384
+max_output_len: 2048
+temperature: 0.7
+top_p: 0.95
+repetition_penalty: 1.05
+call_method: api
+base_url: [http://localhost:8000/v1]
+api_key: EMPTY
+seed: 42
